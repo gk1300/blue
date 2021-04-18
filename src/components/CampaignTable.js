@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import campData from "../sample.json";
 import calender from "../assets/calendar.png";
 import report from "../assets/report.png";
@@ -7,7 +7,6 @@ import price from "../assets/Price.png";
 
 const CampaignTable = ({ tab }) => {
   const datt = [...campData.data];
-  // const [label, setLabel] = useState("to go");
 
   const campaigns = datt.filter((item) => {
     let today = new Date().getTime();
@@ -76,7 +75,7 @@ const CampaignTable = ({ tab }) => {
                     ? `${
                         new Date(item.createdOn).getDate() -
                         new Date().getDate()
-                      } to go`
+                      } Days to go`
                     : tab === "past"
                     ? "expired"
                     : "currently live"}
